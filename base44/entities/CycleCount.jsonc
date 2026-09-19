@@ -1,0 +1,55 @@
+{
+  "name": "CycleCount",
+  "type": "object",
+  "properties": {
+    "store_id": {
+      "type": "string"
+    },
+    "product_id": {
+      "type": "string"
+    },
+    "product_name": {
+      "type": "string"
+    },
+    "expected_qty": {
+      "type": "number",
+      "default": 0
+    },
+    "counted_qty": {
+      "type": "number",
+      "default": 0
+    },
+    "variance": {
+      "type": "number",
+      "default": 0
+    },
+    "count_type": {
+      "type": "string",
+      "enum": [
+        "cycle_count",
+        "shrinkage",
+        "damage",
+        "theft"
+      ],
+      "default": "cycle_count"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "completed"
+      ],
+      "default": "pending"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "counted_by": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "store_id",
+    "product_id"
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "name": "OnlineOrder",
+  "type": "object",
+  "properties": {
+    "order_number": {
+      "type": "string"
+    },
+    "store_id": {
+      "type": "string"
+    },
+    "customer_name": {
+      "type": "string"
+    },
+    "customer_email": {
+      "type": "string"
+    },
+    "customer_phone": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "line_total": {
+            "type": "number"
+          }
+        }
+      },
+      "default": []
+    },
+    "subtotal": {
+      "type": "number",
+      "default": 0
+    },
+    "tax": {
+      "type": "number",
+      "default": 0
+    },
+    "delivery_fee": {
+      "type": "number",
+      "default": 0
+    },
+    "total": {
+      "type": "number",
+      "default": 0
+    },
+    "fulfillment_type": {
+      "type": "string",
+      "enum": [
+        "bopis",
+        "delivery"
+      ],
+      "default": "bopis"
+    },
+    "delivery_address": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "preparing",
+        "ready",
+        "picked_up",
+        "out_for_delivery",
+        "delivered",
+        "cancelled"
+      ],
+      "default": "pending"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "order_number",
+    "store_id",
+    "customer_name",
+    "total"
+  ]
+}

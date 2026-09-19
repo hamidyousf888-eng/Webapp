@@ -1,0 +1,67 @@
+{
+  "name": "Expense",
+  "type": "object",
+  "properties": {
+    "store_id": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "utilities",
+        "rent",
+        "maintenance",
+        "payroll",
+        "supplies",
+        "marketing",
+        "insurance",
+        "delivery",
+        "technology",
+        "other"
+      ],
+      "default": "other"
+    },
+    "amount": {
+      "type": "number",
+      "default": 0
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "vendor": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "recurring": {
+      "type": "boolean",
+      "default": false
+    },
+    "recurring_period": {
+      "type": "string",
+      "enum": [
+        "weekly",
+        "monthly",
+        "quarterly",
+        "yearly",
+        "none"
+      ],
+      "default": "none"
+    },
+    "payment_method": {
+      "type": "string",
+      "default": "bank_transfer"
+    },
+    "approved_by": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "store_id",
+    "category",
+    "amount",
+    "date"
+  ]
+}

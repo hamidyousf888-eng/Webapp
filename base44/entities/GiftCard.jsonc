@@ -1,0 +1,79 @@
+{
+  "name": "GiftCard",
+  "type": "object",
+  "properties": {
+    "card_number": {
+      "type": "string"
+    },
+    "store_id": {
+      "type": "string"
+    },
+    "balance": {
+      "type": "number",
+      "default": 0
+    },
+    "initial_value": {
+      "type": "number",
+      "default": 0
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "inactive",
+        "redeemed",
+        "expired"
+      ],
+      "default": "active"
+    },
+    "customer_name": {
+      "type": "string"
+    },
+    "customer_email": {
+      "type": "string"
+    },
+    "issued_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "expiry_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "transactions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "load",
+              "redeem",
+              "adjustment"
+            ]
+          },
+          "amount": {
+            "type": "number"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "reference": {
+            "type": "string"
+          }
+        }
+      },
+      "default": []
+    }
+  },
+  "required": [
+    "card_number",
+    "store_id",
+    "balance"
+  ]
+}

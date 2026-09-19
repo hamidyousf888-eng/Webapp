@@ -1,0 +1,40 @@
+{
+  "name": "Customer",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "loyalty_points": {
+      "type": "number",
+      "default": 0
+    },
+    "store_id": {
+      "type": "string"
+    },
+    "house_account_balance": {
+      "type": "number",
+      "default": 0
+    },
+    "has_house_account": {
+      "type": "boolean",
+      "default": false
+    },
+    "address": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "store_id"
+  ]
+}

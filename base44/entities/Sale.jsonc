@@ -1,0 +1,99 @@
+{
+  "name": "Sale",
+  "type": "object",
+  "properties": {
+    "store_id": {
+      "type": "string"
+    },
+    "cashier_id": {
+      "type": "string"
+    },
+    "cashier_name": {
+      "type": "string"
+    },
+    "customer_id": {
+      "type": "string"
+    },
+    "customer_name": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "unit": {
+            "type": "string"
+          },
+          "line_total": {
+            "type": "number"
+          },
+          "batch_id": {
+            "type": "string"
+          }
+        }
+      },
+      "default": []
+    },
+    "subtotal": {
+      "type": "number",
+      "default": 0
+    },
+    "tax": {
+      "type": "number",
+      "default": 0
+    },
+    "discount": {
+      "type": "number",
+      "default": 0
+    },
+    "total": {
+      "type": "number",
+      "default": 0
+    },
+    "payment_method": {
+      "type": "string",
+      "enum": [
+        "cash",
+        "card",
+        "mobile",
+        "house_account",
+        "mixed"
+      ],
+      "default": "cash"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "completed",
+        "voided",
+        "refunded"
+      ],
+      "default": "open"
+    },
+    "is_self_checkout": {
+      "type": "boolean",
+      "default": false
+    },
+    "promotion_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "store_id",
+    "total"
+  ]
+}

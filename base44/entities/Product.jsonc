@@ -1,0 +1,67 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "sku": {
+      "type": "string"
+    },
+    "barcode": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "price": {
+      "type": "number"
+    },
+    "cost": {
+      "type": "number"
+    },
+    "unit": {
+      "type": "string",
+      "enum": [
+        "each",
+        "kg",
+        "lb",
+        "g",
+        "oz",
+        "liter",
+        "ml"
+      ],
+      "default": "each"
+    },
+    "allow_fractional": {
+      "type": "boolean",
+      "default": false
+    },
+    "tax_rate": {
+      "type": "number",
+      "default": 0
+    },
+    "image_url": {
+      "type": "string"
+    },
+    "store_id": {
+      "type": "string"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    },
+    "reorder_threshold": {
+      "type": "number",
+      "default": 10
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "price",
+    "store_id"
+  ]
+}

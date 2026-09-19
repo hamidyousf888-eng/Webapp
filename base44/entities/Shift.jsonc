@@ -1,0 +1,57 @@
+{
+  "name": "Shift",
+  "type": "object",
+  "properties": {
+    "store_id": {
+      "type": "string"
+    },
+    "staff_name": {
+      "type": "string"
+    },
+    "staff_id": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "cashier",
+        "manager",
+        "fulfillment",
+        "delivery",
+        "purchasing"
+      ],
+      "default": "cashier"
+    },
+    "start_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "end_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "scheduled",
+        "open",
+        "completed",
+        "traded",
+        "unassigned"
+      ],
+      "default": "scheduled"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "trade_requested_by": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "store_id",
+    "staff_name",
+    "start_time",
+    "end_time"
+  ]
+}

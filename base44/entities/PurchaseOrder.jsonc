@@ -1,0 +1,73 @@
+{
+  "name": "PurchaseOrder",
+  "type": "object",
+  "properties": {
+    "po_number": {
+      "type": "string"
+    },
+    "supplier_id": {
+      "type": "string"
+    },
+    "supplier_name": {
+      "type": "string"
+    },
+    "store_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "sent",
+        "partially_received",
+        "received",
+        "cancelled"
+      ],
+      "default": "draft"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "unit_cost": {
+            "type": "number"
+          },
+          "line_total": {
+            "type": "number"
+          }
+        }
+      },
+      "default": []
+    },
+    "total": {
+      "type": "number",
+      "default": 0
+    },
+    "order_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "expected_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "po_number",
+    "supplier_id",
+    "store_id"
+  ]
+}

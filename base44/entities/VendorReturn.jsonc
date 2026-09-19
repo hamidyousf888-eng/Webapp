@@ -1,0 +1,87 @@
+{
+  "name": "VendorReturn",
+  "type": "object",
+  "properties": {
+    "store_id": {
+      "type": "string"
+    },
+    "supplier_id": {
+      "type": "string"
+    },
+    "supplier_name": {
+      "type": "string"
+    },
+    "product_id": {
+      "type": "string"
+    },
+    "product_name": {
+      "type": "string"
+    },
+    "batch_id": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "number",
+      "default": 0
+    },
+    "unit": {
+      "type": "string",
+      "default": "each"
+    },
+    "reason": {
+      "type": "string",
+      "enum": [
+        "damaged",
+        "expired",
+        "recall",
+        "wrong_item",
+        "quality",
+        "other"
+      ],
+      "default": "damaged"
+    },
+    "return_value": {
+      "type": "number",
+      "default": 0
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "in_transit",
+        "received",
+        "credited",
+        "cancelled"
+      ],
+      "default": "pending"
+    },
+    "credit_memo_number": {
+      "type": "string"
+    },
+    "credit_amount": {
+      "type": "number",
+      "default": 0
+    },
+    "return_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "tracking_number": {
+      "type": "string"
+    },
+    "initiated_by": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "store_id",
+    "supplier_id",
+    "supplier_name",
+    "product_name",
+    "quantity",
+    "reason"
+  ]
+}

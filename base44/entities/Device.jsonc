@@ -1,0 +1,77 @@
+{
+  "name": "Device",
+  "type": "object",
+  "properties": {
+    "store_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "register",
+        "scanner",
+        "printer",
+        "kitchen_display",
+        "tablet",
+        "scale",
+        "customer_display"
+      ],
+      "default": "register"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "online",
+        "offline",
+        "maintenance"
+      ],
+      "default": "online"
+    },
+    "location": {
+      "type": "string"
+    },
+    "ip_address": {
+      "type": "string"
+    },
+    "serial_number": {
+      "type": "string"
+    },
+    "features": {
+      "type": "object",
+      "properties": {
+        "self_checkout_enabled": {
+          "type": "boolean",
+          "default": false
+        },
+        "scanner_enabled": {
+          "type": "boolean",
+          "default": true
+        },
+        "printer_enabled": {
+          "type": "boolean",
+          "default": true
+        },
+        "cash_drawer_enabled": {
+          "type": "boolean",
+          "default": true
+        }
+      },
+      "default": {}
+    },
+    "last_seen": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "store_id",
+    "name",
+    "type"
+  ]
+}

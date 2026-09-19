@@ -1,0 +1,60 @@
+{
+  "name": "Store",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "company_id": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "store_type": {
+      "type": "string",
+      "enum": [
+        "grocery",
+        "pharmacy",
+        "mixed"
+      ],
+      "default": "grocery"
+    },
+    "feature_toggles": {
+      "type": "object",
+      "properties": {
+        "self_checkout": {
+          "type": "boolean",
+          "default": false
+        },
+        "ai_loss_prevention": {
+          "type": "boolean",
+          "default": false
+        },
+        "delivery_routing": {
+          "type": "boolean",
+          "default": false
+        },
+        "online_storefront": {
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "default": {}
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "name",
+    "company_id"
+  ]
+}

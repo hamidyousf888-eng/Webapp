@@ -1,0 +1,64 @@
+{
+  "name": "MarketingCampaign",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "store_id": {
+      "type": "string"
+    },
+    "channel": {
+      "type": "string",
+      "enum": [
+        "sms",
+        "email"
+      ],
+      "default": "email"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "body": {
+      "type": "string"
+    },
+    "target_segment": {
+      "type": "string",
+      "enum": [
+        "all",
+        "loyalty",
+        "house_account",
+        "new"
+      ],
+      "default": "all"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "scheduled",
+        "sent"
+      ],
+      "default": "draft"
+    },
+    "sent_count": {
+      "type": "number",
+      "default": 0
+    },
+    "open_count": {
+      "type": "number",
+      "default": 0
+    },
+    "scheduled_date": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "name",
+    "store_id",
+    "channel",
+    "subject",
+    "body"
+  ]
+}

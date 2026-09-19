@@ -1,0 +1,61 @@
+{
+  "name": "TransferOrder",
+  "type": "object",
+  "properties": {
+    "transfer_number": {
+      "type": "string"
+    },
+    "from_store_id": {
+      "type": "string"
+    },
+    "to_store_id": {
+      "type": "string"
+    },
+    "from_store_name": {
+      "type": "string"
+    },
+    "to_store_name": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "in_transit",
+        "received",
+        "cancelled"
+      ],
+      "default": "draft"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "expiry_date": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      },
+      "default": []
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "transfer_number",
+    "from_store_id",
+    "to_store_id"
+  ]
+}

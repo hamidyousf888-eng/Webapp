@@ -1,0 +1,54 @@
+{
+  "name": "WasteLog",
+  "type": "object",
+  "properties": {
+    "store_id": {
+      "type": "string"
+    },
+    "product_id": {
+      "type": "string"
+    },
+    "product_name": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "number",
+      "default": 0
+    },
+    "unit": {
+      "type": "string",
+      "default": "each"
+    },
+    "reason": {
+      "type": "string",
+      "enum": [
+        "spoilage",
+        "damage",
+        "theft",
+        "expiry",
+        "quality_recall",
+        "other"
+      ],
+      "default": "spoilage"
+    },
+    "value_loss": {
+      "type": "number",
+      "default": 0
+    },
+    "notes": {
+      "type": "string"
+    },
+    "logged_by": {
+      "type": "string"
+    },
+    "batch_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "store_id",
+    "product_name",
+    "quantity",
+    "reason"
+  ]
+}

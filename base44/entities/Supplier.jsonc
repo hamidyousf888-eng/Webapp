@@ -1,0 +1,36 @@
+{
+  "name": "Supplier",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "contact_name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "store_id": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "payment_terms": {
+      "type": "string",
+      "default": "net30"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "name",
+    "store_id"
+  ]
+}

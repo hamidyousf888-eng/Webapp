@@ -1,0 +1,52 @@
+{
+  "name": "InventoryBatch",
+  "type": "object",
+  "properties": {
+    "product_id": {
+      "type": "string"
+    },
+    "store_id": {
+      "type": "string"
+    },
+    "batch_number": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "number",
+      "default": 0
+    },
+    "expiry_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "received_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "cost_per_unit": {
+      "type": "number"
+    },
+    "supplier_id": {
+      "type": "string"
+    },
+    "warehouse_location": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "depleted",
+        "expired",
+        "removed"
+      ],
+      "default": "active"
+    }
+  },
+  "required": [
+    "product_id",
+    "store_id",
+    "quantity",
+    "expiry_date"
+  ]
+}

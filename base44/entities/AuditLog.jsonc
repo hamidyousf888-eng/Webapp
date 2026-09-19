@@ -1,0 +1,53 @@
+{
+  "name": "AuditLog",
+  "type": "object",
+  "properties": {
+    "store_id": {
+      "type": "string"
+    },
+    "action_type": {
+      "type": "string",
+      "enum": [
+        "price_override",
+        "void",
+        "refund",
+        "delete",
+        "permission_change",
+        "login",
+        "config_change",
+        "data_export",
+        "manual_discount"
+      ],
+      "default": "price_override"
+    },
+    "user_name": {
+      "type": "string"
+    },
+    "entity_type": {
+      "type": "string"
+    },
+    "entity_id": {
+      "type": "string"
+    },
+    "details": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "info",
+        "warning",
+        "critical"
+      ],
+      "default": "info"
+    },
+    "ip_address": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "store_id",
+    "action_type",
+    "user_name"
+  ]
+}

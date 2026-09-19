@@ -1,0 +1,92 @@
+{
+  "name": "Company",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "subscription_tier": {
+      "type": "string",
+      "enum": [
+        "starter",
+        "professional",
+        "enterprise"
+      ],
+      "default": "starter"
+    },
+    "plan_type": {
+      "type": "string",
+      "enum": [
+        "per_register",
+        "per_user"
+      ],
+      "default": "per_register"
+    },
+    "subscription_expiry": {
+      "type": "string",
+      "format": "date"
+    },
+    "expiry_alert_message": {
+      "type": "string",
+      "default": "Your subscription is expiring soon. Please renew to avoid service interruption."
+    },
+    "feature_toggles": {
+      "type": "object",
+      "properties": {
+        "self_checkout": {
+          "type": "boolean",
+          "default": false
+        },
+        "ai_loss_prevention": {
+          "type": "boolean",
+          "default": false
+        },
+        "delivery_routing": {
+          "type": "boolean",
+          "default": false
+        },
+        "marketing_campaigns": {
+          "type": "boolean",
+          "default": false
+        },
+        "online_storefront": {
+          "type": "boolean",
+          "default": false
+        },
+        "loyalty_program": {
+          "type": "boolean",
+          "default": false
+        },
+        "offline_mode": {
+          "type": "boolean",
+          "default": true
+        },
+        "accounting_sync": {
+          "type": "boolean",
+          "default": false
+        },
+        "white_label": {
+          "type": "boolean",
+          "default": false
+        },
+        "shift_management": {
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "default": {}
+    },
+    "contact_email": {
+      "type": "string"
+    },
+    "contact_phone": {
+      "type": "string"
+    },
+    "logo_url": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

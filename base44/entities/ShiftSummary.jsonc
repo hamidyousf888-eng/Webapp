@@ -1,0 +1,79 @@
+{
+  "name": "ShiftSummary",
+  "type": "object",
+  "properties": {
+    "store_id": {
+      "type": "string"
+    },
+    "shift_id": {
+      "type": "string"
+    },
+    "staff_name": {
+      "type": "string"
+    },
+    "staff_id": {
+      "type": "string"
+    },
+    "shift_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "starting_drawer": {
+      "type": "number",
+      "default": 0
+    },
+    "counted_cash": {
+      "type": "number",
+      "default": 0
+    },
+    "expected_cash": {
+      "type": "number",
+      "default": 0
+    },
+    "variance": {
+      "type": "number",
+      "default": 0
+    },
+    "card_total": {
+      "type": "number",
+      "default": 0
+    },
+    "mobile_total": {
+      "type": "number",
+      "default": 0
+    },
+    "total_sales": {
+      "type": "number",
+      "default": 0
+    },
+    "tips_declared": {
+      "type": "number",
+      "default": 0
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "pending_approval",
+        "approved",
+        "disputed"
+      ],
+      "default": "open"
+    },
+    "approved_by": {
+      "type": "string"
+    },
+    "approved_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "store_id",
+    "staff_name",
+    "shift_date"
+  ]
+}

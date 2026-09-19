@@ -1,0 +1,76 @@
+{
+  "name": "DeliveryRoute",
+  "type": "object",
+  "properties": {
+    "store_id": {
+      "type": "string"
+    },
+    "driver_name": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "in_progress",
+        "completed",
+        "cancelled"
+      ],
+      "default": "pending"
+    },
+    "stops": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "order_id": {
+            "type": "string"
+          },
+          "customer_name": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "sequence": {
+            "type": "number"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "delivered",
+              "failed"
+            ],
+            "default": "pending"
+          },
+          "proof_of_delivery": {
+            "type": "string"
+          }
+        }
+      },
+      "default": []
+    },
+    "total_distance_km": {
+      "type": "number",
+      "default": 0
+    },
+    "estimated_time_min": {
+      "type": "number",
+      "default": 0
+    },
+    "route_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "optimized": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "store_id",
+    "driver_name",
+    "route_date"
+  ]
+}

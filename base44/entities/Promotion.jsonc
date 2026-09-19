@@ -1,0 +1,50 @@
+{
+  "name": "Promotion",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "store_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "percentage",
+        "fixed",
+        "bogo"
+      ],
+      "default": "percentage"
+    },
+    "value": {
+      "type": "number",
+      "default": 0
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    },
+    "applies_to_category": {
+      "type": "string"
+    },
+    "min_purchase": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "name",
+    "store_id",
+    "type",
+    "value"
+  ]
+}

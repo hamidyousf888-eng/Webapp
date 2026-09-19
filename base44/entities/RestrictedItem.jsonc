@@ -1,0 +1,68 @@
+{
+  "name": "RestrictedItem",
+  "type": "object",
+  "properties": {
+    "store_id": {
+      "type": "string"
+    },
+    "product_id": {
+      "type": "string"
+    },
+    "product_name": {
+      "type": "string"
+    },
+    "barcode": {
+      "type": "string"
+    },
+    "restriction_type": {
+      "type": "string",
+      "enum": [
+        "age_verified",
+        "prescription",
+        "license_required",
+        "quantity_limited",
+        "time_limited"
+      ],
+      "default": "age_verified"
+    },
+    "min_age": {
+      "type": "number",
+      "default": 0
+    },
+    "requires_id_scan": {
+      "type": "boolean",
+      "default": true
+    },
+    "requires_manager_approval": {
+      "type": "boolean",
+      "default": false
+    },
+    "max_quantity": {
+      "type": "number",
+      "default": 0
+    },
+    "allowed_start_hour": {
+      "type": "number",
+      "default": 0
+    },
+    "allowed_end_hour": {
+      "type": "number",
+      "default": 24
+    },
+    "category": {
+      "type": "string"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "store_id",
+    "product_name",
+    "restriction_type"
+  ]
+}

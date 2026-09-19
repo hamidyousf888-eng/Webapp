@@ -1,0 +1,48 @@
+{
+  "name": "TaxConfig",
+  "type": "object",
+  "properties": {
+    "store_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "region": {
+      "type": "string"
+    },
+    "rate": {
+      "type": "number",
+      "default": 0
+    },
+    "is_default": {
+      "type": "boolean",
+      "default": false
+    },
+    "applies_to": {
+      "type": "string",
+      "enum": [
+        "all",
+        "grocery",
+        "pharmacy",
+        "specific"
+      ],
+      "default": "all"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "store_id",
+    "name",
+    "rate"
+  ]
+}
